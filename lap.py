@@ -12,10 +12,18 @@ sleep(3)
 
 click_on_laptop=driver.find_element_by_xpath("(//a[@class='list-group-item'])[3]")
 click_on_laptop.click()
-sleep(4)
-laptop_list=driver.find_element_by_xpath('//div/h4[@class="card-title"]')
 sleep(3)
-print(laptop_list.text)
+title_of_product=driver.find_element_by_xpath("//a[text()='Sony vaio i5']")
+print("title of product:",title_of_product.text)
+sleep(4)
+prise_of_product=driver.find_element_by_xpath("(//h5[text()='$790'])[1]")
+print(prise_of_product.text)
+sleep(3)
+click_on_select_product=driver.find_element_by_xpath("(//div[@class='card h-100'])[1]")
+click_on_select_product.click()
+sleep(5)
+prise_of_product=driver.find_element_by_xpath("//h3[@class='price-container']")
+print(prise_of_product.text)
 
 
 

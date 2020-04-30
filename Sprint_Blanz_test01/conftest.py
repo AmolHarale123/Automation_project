@@ -4,7 +4,6 @@ from selenium import webdriver
 import pytest
 
 
-
 @pytest.fixture(scope='class')
 def oneTimeSetUp(request):
     driver=webdriver.Chrome(executable_path="E:\\Chromedriver.exe")
