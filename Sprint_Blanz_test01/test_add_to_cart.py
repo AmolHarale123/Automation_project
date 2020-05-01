@@ -31,6 +31,7 @@ class Test_add_to_cart:
         sleep(3)
         add_to_cart=self.driver.find_element_by_xpath("//a[text()='Add to cart']")
         add_to_cart.click()
+        sleep(5)
         self.driver.save_screenshot("../Screenshot/Product added.png")
         sleep(3)
         self.driver.switch_to.alert
