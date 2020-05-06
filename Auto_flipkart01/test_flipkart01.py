@@ -1,8 +1,4 @@
-from selenium import webdriver
-from html_reports import reports
-from Auto_flipkart01 import conftest
 import pytest
-
 from time import sleep
 
 
@@ -14,9 +10,10 @@ class Test_flipkart_product:
         page_title = self.driver.title
         sleep(3)
         self.driver.save_screenshot("../Screenshot/flipkart_namepage.png")
+        sleep(2)
         print("page_title: ", page_title)
         sleep(2)
-        self.driver.save_screenshot("../Screenshot/flipkart_product_name.png")
+        self.driver.save_screenshot("../Screenshot/flipkartProductName.png")
         search_icon = self.driver.find_element_by_xpath("//button[@type='submit']")
         search_icon.click()
         sleep(4)
@@ -26,7 +23,8 @@ class Test_flipkart_product:
 
         prise_low_to_high=self.driver.find_element_by_xpath("//div[text()='Price -- Low to High']")
         prise_low_to_high.click()
-        self.driver.save_screenshot("../Screenshot/flipkart_ prise_low_to_high_page.png")
+        sleep(2)
+        self.driver.save_screenshot("../Screenshot/flipkartPrisePage01.png")
         sleep(4)
         product_list=self.driver.find_element_by_xpath("//div[@class='_3O0U0u']//div[@class='_1vC4OE']")
         print(product_list.text)
@@ -56,7 +54,8 @@ class Test_flipkart_product:
 
         prise_high_to_low=self.driver.find_element_by_xpath("//div[text()='Price -- High to Low']")
         prise_high_to_low.click()
-        self.driver.save_screenshot("../Screenshot/flipkart_prise_high_to_low_page.png")
+        sleep(2)
+        self.driver.save_screenshot("../Screenshot/flipkartPrisePage02.png")
         sleep(4)
         product_prise_high_to_low=self.driver.find_element_by_xpath("//div[@class='_3O0U0u']//div[@class='_1vC4OE']")
         print("product_prise: ", product_prise_high_to_low.text)
