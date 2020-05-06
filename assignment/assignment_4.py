@@ -4,7 +4,8 @@ from time import sleep
 def serach_box():
     driver=webdriver.Chrome(executable_path="E:\\Chromedriver.exe")
     driver.get("https://www.flipkart.com")
-    print(driver.title)
+    page_title=driver.title
+    print(page_title)
     sleep(3)
     driver.maximize_window()
     sleep(2)
@@ -36,11 +37,10 @@ def serach_box():
         else:
             print("product is not in list")
 
-    #print(len(product_list))
+
     sleep(4)
 
 
     driver.close()
     driver.quit()
 serach_box()
-#//div[@class='_3O0U0u']//div[@class='_1vC4OE']
