@@ -3,13 +3,11 @@ from time import sleep
 import pytest
 
 @pytest.mark.usefixtures("oneTimeSetUp")
-class hotel_discounts:
+class testHotel_discounts:
 
     def test_name_of_city(self):
         print(self.driver.title)
         Select_city=self.driver.find_element_by_xpath("//input[@type='text']")
-        Select_city=self.Select(Select_city)
-        Select_city.select_by_visible_text("New Delhi,Delhi,India")
         Select_city.send_keys("New Delhi")
         Select_city.click()
         assert self.driver.title=="Hotels in India: Online Hotel Booking with Hot Deals & Discounts - Yatra.com"
